@@ -23,13 +23,16 @@
   "scripts": {
     "test": "mocha",
     "test-cov": "istanbul cover _mocha -- -R spec --check-leaks",
-    "test-travis": "istanbul cover _mocha --report lcovonly -- --reporter dot"
+    "test-travis": "istanbul cover _mocha --report lcovonly -- --reporter dot",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "es6-promise": "^4.0.2",
     "lodash": "^4.16.2",
     "stampit": "^3.0.1",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "bluebird": "^3.4.1",
@@ -47,5 +50,6 @@
   },
   "engines": {
     "node": ">=4"
-  }
+  },
+  "snyk": true
 }
